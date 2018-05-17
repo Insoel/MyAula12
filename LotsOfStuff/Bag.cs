@@ -81,5 +81,16 @@ namespace Aula12
                 $"totais de {Weight:f2} Kg e {Value:c}, respetivamente " +
                 $"(karma={Karma:f2})";
         }
+
+        public bool ContainsItemOfType<T>()
+            where T : IStuff
+        {
+            foreach (IStuff cena in this)
+            {
+                if (cena is T)
+                    return true;
+            }
+            return false;
+        }
     }
 }
