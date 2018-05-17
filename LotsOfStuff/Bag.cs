@@ -92,5 +92,17 @@ namespace Aula12
             }
             return false;
         }
+
+        public IEnumerable<T>GetItemsOfType<T>()
+            where T : class, IStuff
+        {
+            List<T> items = new List<T>();
+            foreach (IStuff cena in this)
+            {
+                if (cena is T)
+                    items.Add(cena as T);
+            }
+            return items;
+        }
     }
 }

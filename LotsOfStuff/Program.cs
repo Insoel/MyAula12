@@ -88,16 +88,21 @@ namespace Aula12
             Console.WriteLine(p);
 
             //Verificar se tem guns
-            Console.WriteLine("Bag do Player contém Guns?" + p.BagOfStuff.ContainsItemOfType<Gun>());
+            Console.WriteLine("Bag do Player contém Guns? " + p.BagOfStuff.ContainsItemOfType<Gun>());
 
             //Verificar se tem comida
-            Console.WriteLine("Bag do Player contém Food?" + p.BagOfStuff.ContainsItemOfType<Food>());
+            Console.WriteLine("Bag do Player contém Food? " + p.BagOfStuff.ContainsItemOfType<Food>());
 
             //Verificar se tem bags
-            Console.WriteLine("Bag do Player contém Bags?" + p.BagOfStuff.ContainsItemOfType<Bag>());
+            Console.WriteLine("Bag do Player contém Bags? " + p.BagOfStuff.ContainsItemOfType<Bag>());
 
             //Verificar se tem extrabags
-            Console.WriteLine("Bag do Player contém ExtraBags?" + extraBag.ContainsItemOfType<Bag>());
+            Console.WriteLine("Bag do Player contém ExtraBags? " + extraBag.ContainsItemOfType<Bag>());
+
+            foreach (Food f in p.BagOfStuff.GetItemsOfType<Food>())
+            {
+                Console.WriteLine(f);
+            }
 
         }
     }
