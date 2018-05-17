@@ -55,5 +55,17 @@ namespace Aula12
         {
             return GetEnumerator();
         }
+
+        public void Add(T item)
+        {
+            if (object.Equals(v1, default(T))) {
+                v1 = item;
+            } else if (object.Equals(v2, default(T))) {
+                v2 = item;
+            } else if (object.Equals(v3, default(T)))
+            {
+                v3 = item;
+            }
+        }
     }
 }
