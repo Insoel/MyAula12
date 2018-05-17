@@ -104,6 +104,11 @@ namespace Aula12
                 Console.WriteLine(f);
             }
 
+            foreach (Gun g in p.BagOfStuff.BetterGetItemsOfType<Gun>())
+            {
+                Console.WriteLine(g);
+            }
+
         }
     }
 }

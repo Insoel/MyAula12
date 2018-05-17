@@ -104,5 +104,17 @@ namespace Aula12
             }
             return items;
         }
+
+        public IEnumerable<T>BetterGetItemsOfType<T>()
+            where T : class, IStuff
+        {
+            foreach (IStuff cena in this)
+            {
+                if (cena is T)
+                {
+                    yield return cena as T;
+                }
+            }
+        }
     }
 }
