@@ -15,8 +15,23 @@ namespace Aula12
             Guarda3<float> g3f = new Guarda3<float>();
 
             g3I.SetItem(2, new Food(FoodType.Bread, 2, 7));
-            g3s.SetItem(4, "hello");
-            g3f.SetItem(5, 2.2f);
+            g3s.SetItem(2, "hello");
+            g3f.SetItem(1, 2.2f);
+
+            foreach (IStuff i in g3I)
+            {
+                Console.WriteLine(i);
+            }
+
+            foreach (string s in g3s)
+            {
+                Console.WriteLine(s);
+            }
+
+            foreach (float f in g3f)
+            {
+                Console.WriteLine(f);
+            }
         }
     }
 }

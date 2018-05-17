@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Aula12
 {
-    class Guarda3<T>
+    class Guarda3<T> : IEnumerable<T>
     {
         private T v1, v2, v3;
 
@@ -16,6 +17,14 @@ namespace Aula12
             v2 = default(T);
             v3 = default(T);
         }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            yield return v1;
+            yield return v2;
+            yield return v3;
+        }
+
         public T GetItem(int i)
         {
             switch(i)
@@ -40,6 +49,11 @@ namespace Aula12
                     v3 = item;
                     break; 
             }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }
