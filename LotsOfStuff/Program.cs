@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.IO;
 
 namespace Aula12
 {
@@ -108,13 +109,17 @@ namespace Aula12
             {
                 Console.WriteLine(g);
             }
-            Food f2;
+            /*Food f2;
             Gun g2;
             p.BagOfStuff.GetHeavier1(out f2, out g2);
             Console.WriteLine(f2);
             Console.WriteLine(g2);
             Console.WriteLine(p.BagOfStuff.GetHeavier2());
             Console.WriteLine(p.BagOfStuff.GetHeavier3());
+            work on this later*/
+
+            string path = @"C:\Users\I_J_S\source\repos\Aula12\something.txt";
+            File.WriteAllLines(path, p.BagOfStuff.GetStrings());
         }
     }
 }

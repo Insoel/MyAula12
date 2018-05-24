@@ -189,5 +189,13 @@ namespace Aula12
             }
             return new Tuple<Food, Gun>(food, gun);
         }
+
+        public IEnumerable<string> GetStrings()
+        {
+            foreach (IStuff stuff in this)
+            {
+                yield return stuff.ToString();
+            }
+        }
     }
 }

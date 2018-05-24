@@ -1,0 +1,6 @@
+Bread tem 2 dias, pesa 0,50 Kg e custa 0,67 € (karma=3,66)
+Vegetables tem 5 dias, pesa 0,30 Kg e custa 1,33 € (karma=-3,44)
+Arma pesa 1,95 Kg (inclui 9 balas) e custa 250,00 € (karma=2,13)
+Fruit tem 0 dias, pesa 0,20 Kg e custa 12,00 € (karma=-3,53)
+Arma pesa 4,16 Kg (inclui 24 balas) e custa 325,00 € (karma=-2,00)
+Mochila com 2 itens e um peso e valor totais de 1,61 Kg e 63,00 €, respetivamente (karma=2,83)
