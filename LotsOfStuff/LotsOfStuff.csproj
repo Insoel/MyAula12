@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bag.cs" />
+    <Compile Include="FoodAndGun.cs" />
     <Compile Include="IHasKarma.cs" />
     <Compile Include="ItemWithKarma.cs" />
     <Compile Include="Food.cs" />

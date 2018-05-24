@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Aula12
 {
@@ -93,7 +94,7 @@ namespace Aula12
             return false;
         }
 
-        public IEnumerable<T>GetItemsOfType<T>()
+        public IEnumerable<T> GetItemsOfType<T>()
             where T : class, IStuff
         {
             List<T> items = new List<T>();
@@ -105,7 +106,7 @@ namespace Aula12
             return items;
         }
 
-        public IEnumerable<T>BetterGetItemsOfType<T>()
+        public IEnumerable<T> BetterGetItemsOfType<T>()
             where T : class, IStuff
         {
             foreach (IStuff cena in this)
@@ -115,6 +116,78 @@ namespace Aula12
                     yield return cena as T;
                 }
             }
+        }
+
+        public void GetHeavier1(out Food food, out Gun gun)
+        {
+            food = null; gun = null;
+            foreach (IStuff stuff in this)
+            {
+                if (stuff is Food)
+                {
+                    if ((food == null) || (stuff.Weight > food.Weight))
+                    {
+                        food = stuff as Food;
+                    }
+                }
+                else if (stuff is Gun)
+                {
+                    if ((gun == null) || (stuff.Weight > gun.Weight))
+                    {
+                        gun = stuff as Gun;
+                    }
+                }
+            }
+        }
+
+        public FoodAndGun GetHeavier2()
+        {
+            Food food = null;
+            Gun gun = null;
+
+            foreach (IStuff stuff in this)
+            {
+                if (stuff is Food)
+                {
+                    if ((food == null) || (stuff.Weight > food.Weight))
+                    {
+                        food = stuff as Food;
+                    }
+                }
+                else if (stuff is Gun)
+                {
+                    if ((gun == null) || (stuff.Weight > gun.Weight))
+                    {
+                        gun = stuff as Gun;
+                    }
+                }
+            }
+            return new FoodAndGun(food, gun);
+        }
+
+        public Tuple <Food, Gun> GetHeavier3()
+        {
+            Food food = null;
+            Gun gun = null;
+
+            foreach (IStuff stuff in this)
+            {
+                if (stuff is Food)
+                {
+                    if ((food == null) || (stuff.Weight > food.Weight))
+                    {
+                        food = stuff as Food;
+                    }
+                }
+                else if (stuff is Gun)
+                {
+                    if ((gun == null) || (stuff.Weight > gun.Weight))
+                    {
+                        gun = stuff as Gun;
+                    }
+                }
+            }
+            return new Tuple<Food, Gun>(food, gun);
         }
     }
 }
